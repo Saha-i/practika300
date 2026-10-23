@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить студента</title>
+</head>
+<body>
+<h1>Добавить студента</h1>
+<form th:action="@{/students/add}" th:object="${student}" method="post">
+    <label>Имя: <input type="text" th:field="*{name}" required></label><br>
+    <label>Курс: <input type="number" th:field="*{course}" min="1" max="6" required></label><br>
+    <label>Есть задолженность: <input type="checkbox" th:field="*{hasDebt}"></label><br>
+    <button type="submit">Сохранить</button>
+</form>
+<a th:href="@{/students}">Назад к списку</a>
+</body>
+</html>
